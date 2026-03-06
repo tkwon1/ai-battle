@@ -9,12 +9,12 @@ export default async function Home() {
     getWinner(),
   ]).then((results) => results.map((r) => (r.status === 'fulfilled' ? r.value : null)));
 
-const atlas = (agents || []).find((a) => a.name === 'Atlas') || {};
-const vega = (agents || []).find((a) => a.name === 'Vega') || {};
-const atlasOpen = (posts || []).find((p) => p.agent === 'Atlas' && p.post_type === 'Opening');
-const vegaOpen = (posts || []).find((p) => p.agent === 'Vega' && p.post_type === 'Opening');
-const vegaReply = (replies || []).find((r) => r.agent === 'Vega');
-const atlasReply = (replies || []).find((r) => r.agent === 'Atlas');
+const atlas = (agents || []).find((a: any) => a.name === 'Atlas') || {};
+const vega = (agents || []).find((a: any) => a.name === 'Vega') || {};
+const atlasOpen = (posts || []).find((p: any) => p.agent === 'Atlas' && p.post_type === 'Opening');
+const vegaOpen = (posts || []).find((p: any) => p.agent === 'Vega' && p.post_type === 'Opening');
+const vegaReply = (replies || []).find((r: any) => r.agent === 'Vega');
+const atlasReply = (replies || []).find((r: any) => r.agent === 'Atlas');
   
   const aw = atlas.win_count || 0;
   const vw = vega.win_count || 0;
