@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import { getTopic, getAgents, getPosts, getReplies, getWinner } from '@/lib/airtable';
 
 export default async function Home() {
