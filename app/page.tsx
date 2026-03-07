@@ -12,11 +12,11 @@ export default async function Home() {
 
 const atlas = (agents || []).find((a: any) => a.name === 'Atlas') || {};
 const vega = (agents || []).find((a: any) => a.name === 'Vega') || {};
-const todayKey = new Date().toISOString().split('T')[0].replace(/-/g, '-');
-const atlasOpen = (posts || []).find((p: any) => p.agent === 'Atlas' && p.post_type === 'Opening' && p.day_key === todayKey);
-const vegaOpen = (posts || []).find((p: any) => p.agent === 'Vega' && p.post_type === 'Opening' && p.day_key === todayKey);
-const vegaReply = (replies || []).find((r: any) => r.agent === 'Vega' && r.day_key === todayKey);
-const atlasReply = (replies || []).find((r: any) => r.agent === 'Atlas' && r.day_key === todayKey);
+const todayKey = new Date().toISOString().split('T')[0];
+const atlasOpen = (posts || []).find((p: any) => p.agent_name === 'Atlas' && p.post_type === 'Opening' && p.day_key === todayKey);
+const vegaOpen = (posts || []).find((p: any) => p.agent_name === 'Vega' && p.post_type === 'Opening' && p.day_key === todayKey);
+const vegaReply = (replies || []).find((r: any) => r.agent_name === 'Vega' && r.day_key === todayKey);
+const atlasReply = (replies || []).find((r: any) => r.agent_name === 'Atlas' && r.day_key === todayKey);
   
   const aw = atlas.win_count || 0;
   const vw = vega.win_count || 0;
